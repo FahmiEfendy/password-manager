@@ -1,0 +1,32 @@
+@import "../../style/base.scss";
+
+.container {
+  margin-bottom: 5rem;
+
+  .container_logo {
+    @include directionX;
+
+    .logo {
+      font-size: 1.8rem !important;
+      cursor: pointer;
+    }
+
+    .logo_text {
+      font-size: 1.2em !important;
+      margin-left: 0.3rem !important;
+      cursor: pointer;
+    }
+  }
+
+  .navbar {
+    @include directionX;
+    margin-left: 2rem;
+    justify-content: space-between;
+    width: 15%;
+    text-transform: capitalize;
+
+    .navbar_list {
+      cursor: pointer;
+    }
+  }
+}

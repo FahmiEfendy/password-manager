@@ -7,19 +7,26 @@ import App from "./App.jsx";
 import Home from "./pages/Home/index.jsx";
 import Detail from "./pages/Detail/index.jsx";
 import Category from "./pages/Category/index.jsx";
+import Navbar from "./components/Navbar/index.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/detail/:id",
-    element: <Detail />,
-  },
-  {
-    path: "/category/:category",
-    element: <Category />,
+    element: <Navbar />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/detail/:id",
+        element: <Detail />,
+      },
+      {
+        path: "/category/:category",
+        element: <Category />,
+      },
+    ],
   },
 ]);
 
