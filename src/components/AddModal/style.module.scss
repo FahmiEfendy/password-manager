@@ -1,0 +1,37 @@
+@import "../../style/base.scss";
+
+.container {
+  @include directionX;
+
+  .container__inner {
+    padding: 2rem;
+    width: 500px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+
+    h5 {
+      text-align: center;
+    }
+
+    form {
+      @include directionY;
+
+      .form_label {
+        margin: 1rem 0 0.5rem;
+      }
+
+      .container_btn{
+        @include directionX;
+        justify-content: end;
+        margin-top: 2rem;
+      }
+
+      button{
+        margin-left: 1rem;
+        padding: .5rem 2rem;
+      }
+    }
+  }
+}

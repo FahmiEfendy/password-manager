@@ -16,6 +16,7 @@ const DeleteModal = ({ isOpen, setIsOpen, id }) => {
       const response = await callApi(`/password/${id}`, "DELETE");
       setIsOpen(false);
       navigate("/");
+      location.reload();
     } catch (err) {
       console.log(err.message);
     }

@@ -1,5 +1,11 @@
 @import "../../style/base.scss";
 
+.container__btn_add{
+  @include directionX;
+  justify-content: end;
+  margin: 2rem 0 1rem 0
+}
+
 .btn_container {
   @include directionX;
   justify-content: space-around;

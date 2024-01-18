@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  Box,
   Button,
   CircularProgress,
   Container,
@@ -16,6 +17,7 @@ import {
 
 import classes from "./style.module.scss";
 import { callApi } from "../../domain/api";
+import AddModal from "../../components/AddModal";
 import DeleteModal from "../../components/DeleteModal";
 
 const Home = () => {
@@ -24,6 +26,7 @@ const Home = () => {
   const [deleteId, setDeleteId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [accountList, setAccountList] = useState([]);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   const detailAccountHandler = (id) => {
@@ -33,6 +36,10 @@ const Home = () => {
   const deleteAccountHandler = (id) => {
     setDeleteId(id);
     setIsDeleteModalOpen(true);
+  };
+
+  const addPasswordHandler = () => {
+    setIsAddModalOpen(true);
   };
 
   useEffect(() => {
@@ -52,6 +59,15 @@ const Home = () => {
 
   return (
     <Container>
+      <Box className={classes.container__btn_add}>
+        <Button
+          variant="contained"
+          className={classes.btn_add}
+          onClick={addPasswordHandler}
+        >
+          Add Password
+        </Button>
+      </Box>
       {!isLoading ? (
         <TableContainer component={Paper}>
           <Table>
@@ -109,11 +125,14 @@ const Home = () => {
       ) : (
         <CircularProgress />
       )}
+
       <DeleteModal
         id={deleteId}
         isOpen={isDeleteModalOpen}
         setIsOpen={setIsDeleteModalOpen}
       />
+
+      <AddModal isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} />
     </Container>
   );
 };
