@@ -14,9 +14,7 @@ const Navbar = () => {
   };
 
   const navHandler = (category) => {
-    console.log(category);
     navigate(`/category/${category}`);
-    console.log("trigered");
   };
 
   return (
@@ -31,9 +29,10 @@ const Navbar = () => {
               </Typography>
             </Box>
             <Box className={classes.navbar}>
-              {navList.map((data) => {
+              {navList.map((data, index) => {
                 return (
                   <Box
+                    key={index}
                     onClick={() => navHandler(data)}
                     className={classes.navbar_list}
                   >

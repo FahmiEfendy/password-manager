@@ -11,14 +11,17 @@ import {
 import classes from "./style.module.scss";
 import { callApi } from "../../domain/api";
 import AddModal from "../../components/AddModal";
+import AlertModal from "../../components/AlertModal";
 import DeleteModal from "../../components/DeleteModal";
 import PasswordList from "../../components/PasswordList";
 
 const Category = () => {
   const { category } = useParams();
 
+  const [error, setError] = useState("");
   const [deleteId, setDeleteId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [passwordListByCategory, setPasswordListByCategory] = useState([]);
@@ -31,14 +34,21 @@ const Category = () => {
     const getAccountListByCategory = async () => {
       setIsLoading(true);
       try {
-        const response = await callApi(
-          `/password/?category=${category}`,
-          "GET"
-        );
+        const response = await callApi(`/password?category=${category}`, "GET");
 
         setPasswordListByCategory(response);
+        setIsSuccess(true);
+
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000);
       } catch (err) {
+        setError(err.message);
         console.log(err.message);
+
+        setTimeout(() => {
+          setError("");
+        }, 3000);
       }
       setIsLoading(false);
     };
@@ -102,6 +112,15 @@ const Category = () => {
       />
 
       <AddModal isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} />
+
+      {isSuccess && <AlertModal message="Success Get All Password!" />}
+
+      {error !== "" && (
+        <AlertModal
+          error
+          message={`Failed to Get All Password Because of ${error}`}
+        />
+      )}
     </React.Fragment>
   );
 };
