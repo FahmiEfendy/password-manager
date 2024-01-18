@@ -1,11 +1,11 @@
 import React from "react";
 
-import Home from "./pages/Home";
+import { RouterProvider } from "react-router-dom";
 
-function App() {
+function App({ router }) {
   return (
     <React.Fragment>
-      <Home />
+      <RouterProvider router={router}></RouterProvider>
     </React.Fragment>
   );
 }

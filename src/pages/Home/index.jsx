@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   CircularProgress,
@@ -17,12 +18,13 @@ import classes from "./style.module.scss";
 import { callApi } from "../../domain/api";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(false);
   const [accountList, setAccountList] = useState([]);
 
   const detailAccountHandler = (id) => {
-    // TODO: Redirect to Detail User Page
-    console.log(id);
+    navigate(`/detail/${id}`);
   };
 
   const deleteAccountHandler = (id) => {
