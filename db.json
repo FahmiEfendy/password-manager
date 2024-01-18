@@ -1,0 +1,18 @@
+{
+  "password": [
+    {
+      "id": "6ebbb145-d324-4fb2-83df-7e74f8f91a43",
+      "email": "mail@phincon.com",
+      "provider": "phincon.com",
+      "password": "123456",
+      "category": "work"
+    },
+    {
+      "id": "45a47919-25ec-4040-8ee4-d71e40a9b2b4",
+      "email": "mail@phincon.com",
+      "provider": "phincon.com",
+      "password": "123123",
+      "category": "work"
+    }
+  ]
+}
