@@ -1,17 +1,15 @@
 @import "../../style/base.scss";
 
-.container{
-    @include directionX;
+.container {
+  @include directionX;
 
-    .container_left{
-        width: 40%;
-        background-color: red;
-        margin: 2rem;
+  .container_right {
+    height: 100%;
+
+    .container_btn {
+      min-width: 100%;
+      @include directionX;
+      justify-content: center;
     }
-    
-    .container_right{
-        width: 60%;
-        margin: 2rem;
-        height: 100%;
-    }
+  }
 }

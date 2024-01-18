@@ -44,9 +44,8 @@ const Detail = () => {
   return (
     <React.Fragment>
       {!isLoading ? (
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="xs" className={classes.container}>
           {/* TODO: Get Profile Picture */}
-          <Box className={classes.container_left}>Profile Picture</Box>
           <Grid container rowSpacing={5} className={classes.container_right}>
             <Grid item xs={6}>
               <Typography variant="h5">Provider</Typography>
@@ -66,7 +65,7 @@ const Detail = () => {
             <Grid item xs={6}>
               <Typography variant="h5">{userDetail.category}</Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={1} className={classes.container_btn}>
               <Button
                 variant="contained"
                 color="error"
