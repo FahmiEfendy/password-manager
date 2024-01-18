@@ -55,7 +55,12 @@ const PasswordList = ({ datas, setDeleteId, setIsDeleteModalOpen }) => {
                   <Typography variant="body1">{data.email}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="body1">{data.category}</Typography>
+                  <Typography
+                    variant="body1"
+                    className={classes.capitalize_text}
+                  >
+                    {data.category}
+                  </Typography>
                 </TableCell>
                 <TableCell className={classes.btn_container}>
                   <Button

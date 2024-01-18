@@ -117,9 +117,9 @@ const AddModal = ({ isOpen, setIsOpen }) => {
               <MenuItem value="" disabled>
                 Category
               </MenuItem>
-              <MenuItem value="Work">Work</MenuItem>
-              <MenuItem value="Family">Family</MenuItem>
-              <MenuItem value="Personal">Personal</MenuItem>
+              <MenuItem value="work">Work</MenuItem>
+              <MenuItem value="family">Family</MenuItem>
+              <MenuItem value="personal">Personal</MenuItem>
             </Select>
             <Box className={classes.container_btn}>
               <Button variant="outlined" onClick={closeModalHandler}>
