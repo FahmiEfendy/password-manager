@@ -5,4 +5,25 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+
+  @include apply-at-xl-size {
+    width: 25%;
+  }
+
+  @include apply-at-lg-size {
+    width: 30%;
+  }
+
+  @include apply-at-md-size {
+    width: 40%;
+  }
+
+  @include apply-at-sm-size {
+    width: 50%;
+  }
+
+  @include apply-at-sm-size {
+    width: 70%;
+  }
+
 }

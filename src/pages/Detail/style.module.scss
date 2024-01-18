@@ -6,6 +6,18 @@
   .container_right {
     height: 100%;
 
+    .col {
+      border: 1px solid white;
+      height: 100%;
+      width: 100%;
+
+      padding: 1rem 2rem;
+    }
+
+    .btn_delete {
+      margin-left: auto;
+    }
+
     .container_btn {
       min-width: 100%;
       @include directionX;

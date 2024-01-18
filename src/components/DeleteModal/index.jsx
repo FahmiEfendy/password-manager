@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Fade, Modal, Typography } from "@mui/material";
 
 import AlertModal from "../AlertModal";
@@ -6,6 +7,8 @@ import classes from "./style.module.scss";
 import { callApi } from "../../domain/api";
 
 const DeleteModal = ({ isOpen, setIsOpen, id }) => {
+  const navigate = useNavigate();
+
   const [error, setError] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -21,6 +24,7 @@ const DeleteModal = ({ isOpen, setIsOpen, id }) => {
 
       setTimeout(() => {
         setIsSuccess(false);
+        navigate("/");
         location.reload();
       }, 3000);
     } catch (err) {
@@ -66,9 +70,7 @@ const DeleteModal = ({ isOpen, setIsOpen, id }) => {
       </Modal>
 
       {isSuccess && (
-        <AlertModal
-          message={`Success Delete a Password for Website with id of ${id}`}
-        />
+        <AlertModal message={`Success Delete a Password with id of ${id}`} />
       )}
 
       {error !== "" && (

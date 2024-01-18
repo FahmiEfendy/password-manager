@@ -57,28 +57,27 @@ const Detail = () => {
     <React.Fragment>
       {!isLoading ? (
         userDetail.length === undefined ? (
-          <Container maxWidth="xs" className={classes.container}>
-            {/* TODO: Get Profile Picture */}
+          <Container maxWidth="sm" className={classes.container}>
             <Grid container rowSpacing={5} className={classes.container_right}>
-              <Grid item xs={6}>
+              <Grid item xs={4} className={classes.col}>
                 <Typography variant="h5">Provider</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={8} className={classes.col}>
                 <Typography variant="h5">{userDetail.provider}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4} className={classes.col}>
                 <Typography variant="h5">Email</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={8} className={classes.col}>
                 <Typography variant="h5">{userDetail.email}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4} className={classes.col}>
                 <Typography variant="h5">Category</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={8} className={classes.col}>
                 <Typography variant="h5">{userDetail.category}</Typography>
               </Grid>
-              <Grid item xs={1} className={classes.container_btn}>
+              <Grid item xs={12} className={classes.container_btn}>
                 <Button
                   variant="contained"
                   color="error"

@@ -113,7 +113,11 @@ const Category = () => {
 
       <AddModal isOpen={isAddModalOpen} setIsOpen={setIsAddModalOpen} />
 
-      {isSuccess && <AlertModal message="Success Get All Password!" />}
+      {isSuccess && (
+        <AlertModal
+          message={`Success Get All Password for Category ${category}`}
+        />
+      )}
 
       {error !== "" && (
         <AlertModal
