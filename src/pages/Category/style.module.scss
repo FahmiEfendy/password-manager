@@ -1,5 +1,30 @@
 @import "../../style/base.scss";
 
-h5{
-    text-align: center;
+.not_found {
+  text-align: center;
+}
+
+.container__btn_add {
+  @include directionX;
+  margin-bottom: 2rem;
+
+  .header {
+    text-transform: capitalize;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.container_not_found {
+  @include directionY;
+
+
+  .btn_add_second {
+    padding: 1rem 2 rem;
+    margin-top: 1rem !important;
+    width: 20%;
+    margin: 0 auto;
+  }
 }

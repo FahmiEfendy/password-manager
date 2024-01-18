@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Box, Button, CircularProgress, Container } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Typography,
+} from "@mui/material";
 
 import classes from "./style.module.scss";
 import { callApi } from "../../domain/api";
@@ -36,6 +42,7 @@ const Home = () => {
   return (
     <Container>
       <Box className={classes.container__btn_add}>
+        <Typography variant="h5">Password List</Typography>
         <Button
           variant="contained"
           className={classes.btn_add}
