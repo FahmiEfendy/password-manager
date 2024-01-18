@@ -9,12 +9,20 @@
     .logo {
       font-size: 1.8rem !important;
       cursor: pointer;
+
+      @include apply-at-sm-size {
+        font-size: 1.5rem !important;
+      }
     }
 
     .logo_text {
       font-size: 1.2em !important;
       margin-left: 0.3rem !important;
       cursor: pointer;
+
+      @include apply-at-sm-size {
+        font-size: 1em !important;
+      }
     }
   }
 
@@ -25,8 +33,26 @@
     width: 15%;
     text-transform: capitalize;
 
+    @include apply-at-xl-size {
+      width: 25%;
+    }
+
+    @include apply-at-md-size {
+      width: 35%;
+    }
+
+    @include apply-at-sm-size {
+      width: 45%;
+    }
+
     .navbar_list {
       cursor: pointer;
+
+      .navbar_list_item {
+        @include apply-at-xs-size {
+          font-size: .9rem;
+        }
+      }
     }
   }
 }

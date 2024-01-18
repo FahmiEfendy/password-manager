@@ -37,7 +37,12 @@ const Navbar = () => {
                     onClick={() => navHandler(data)}
                     className={classes.navbar_list}
                   >
-                    <Typography variant="body1">{data}</Typography>
+                    <Typography
+                      variant="body1"
+                      className={classes.navbar_list_item}
+                    >
+                      {data}
+                    </Typography>
                   </Box>
                 );
               })}

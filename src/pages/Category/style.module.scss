@@ -20,11 +20,19 @@
 .container_not_found {
   @include directionY;
 
-
   .btn_add_second {
-    padding: 1rem 2 rem;
+    padding: 0.5rem 0rem;
     margin-top: 1rem !important;
     width: 20%;
     margin: 0 auto;
+
+    @include apply-at-sm-size {
+      width: 35%;
+    }
+
+    @include apply-at-xs-size {
+      font-size: .8rem;
+      width: 50%;
+    }
   }
 }

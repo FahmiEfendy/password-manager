@@ -1,8 +1,30 @@
 @import "../../style/base.scss";
 
+h5 {
+  @include apply-at-sm-size {
+    font-size: 1.3em !important;
+  }
+}
+
 .btn_container {
   @include directionX;
   justify-content: space-around;
+
+  @include apply-at-sm-size {
+    @include directionY;
+  }
+
+  button {
+    @include apply-at-sm-size {
+      font-size: 0.8em;
+    }
+  }
+
+  .btn_delete {
+    @include apply-at-sm-size {
+      margin-top: 1rem;
+    }
+  }
 }
 
 .capitalize_text {
