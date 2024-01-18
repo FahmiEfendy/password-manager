@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-
-import { callApi } from "../../domain/api";
 import {
   Box,
   Button,
@@ -12,16 +10,20 @@ import {
 } from "@mui/material";
 
 import classes from "./style.module.scss";
+import { callApi } from "../../domain/api";
+import DeleteModal from "../../components/DeleteModal";
 
 const Detail = () => {
   const { id } = useParams();
 
+  const [deleteId, setDeleteId] = useState(null);
   const [userDetail, setUserDetail] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   const deleteAccountHandler = (id) => {
-    // TODO: Show Popup to Delete Confirmation
-    console.log(id);
+    setDeleteId(id);
+    setIsDeleteModalOpen(true);
   };
 
   useEffect(() => {
@@ -69,7 +71,7 @@ const Detail = () => {
                 variant="contained"
                 color="error"
                 className={classes.btn_delete}
-                onClick={() => deleteAccountHandler(data.id)}
+                onClick={() => deleteAccountHandler(id)}
               >
                 Delete
               </Button>
@@ -79,6 +81,11 @@ const Detail = () => {
       ) : (
         <CircularProgress />
       )}
+      <DeleteModal
+        id={deleteId}
+        isOpen={isDeleteModalOpen}
+        setIsOpen={setIsDeleteModalOpen}
+      />
     </React.Fragment>
   );
 };

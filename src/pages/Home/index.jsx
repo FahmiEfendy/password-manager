@@ -16,20 +16,23 @@ import {
 
 import classes from "./style.module.scss";
 import { callApi } from "../../domain/api";
+import DeleteModal from "../../components/DeleteModal";
 
 const Home = () => {
   const navigate = useNavigate();
 
+  const [deleteId, setDeleteId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [accountList, setAccountList] = useState([]);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   const detailAccountHandler = (id) => {
     navigate(`/detail/${id}`);
   };
 
   const deleteAccountHandler = (id) => {
-    // TODO: Show Popup to Delete Confirmation
-    console.log(id);
+    setDeleteId(id);
+    setIsDeleteModalOpen(true);
   };
 
   useEffect(() => {
@@ -106,6 +109,11 @@ const Home = () => {
       ) : (
         <CircularProgress />
       )}
+      <DeleteModal
+        id={deleteId}
+        isOpen={isDeleteModalOpen}
+        setIsOpen={setIsDeleteModalOpen}
+      />
     </Container>
   );
 };

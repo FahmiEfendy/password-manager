@@ -1,0 +1,23 @@
+@import "../../style/base.scss";
+
+.container {
+  @include directionX;
+
+  .container__inner {
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+
+    .container_btn {
+      @include directionX;
+      justify-content: end;
+      margin-top: 1.5rem;
+
+      .btn_cancel{
+        margin-right: 2rem;
+      }
+    }
+  }
+}
